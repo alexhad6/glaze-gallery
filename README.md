@@ -4,3 +4,6 @@ An online gallery which allows potters at [La Mano Pottery](https://www.lamanopo
 ## Live sites
 * La Mano Pottery gallery: https://www.lamanopottery.com/glaze-gallery/
 * Mud Matters gallery: https://www.mudmatters.com/glaze-gallery/
+
+## Note
+Images and icons are not uploaded here, only code.
