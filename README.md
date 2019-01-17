@@ -1,1 +1,1 @@
-# glaze-gallery
+# Glaze Gallery
