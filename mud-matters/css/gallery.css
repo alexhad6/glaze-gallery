@@ -1,0 +1,168 @@
+#disclaimer {
+	padding-top: 0.625rem;
+}
+
+#instructions img {
+	height: 1.1rem;
+	vertical-align: -0.17rem;
+}
+
+#instructions span {
+	white-space: nowrap;
+}
+
+#filters {
+	display: inline-block;
+}
+
+.filter {
+	display: flex;
+	align-items: center;
+	margin-bottom: 1rem;
+}
+
+#filters h3 {
+	display: inline;
+	font-weight: 400;
+	font-size: 1.3rem;
+}
+
+h3#slash {
+	display: none;
+	margin-left: 2.2rem;
+	margin-right: 2rem;
+}
+
+select {
+	height: 2.2rem;
+	margin-left: 0.5rem;
+	padding-left: 0.5rem;
+	padding-right: 2.45rem;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: #eee;
+	background-image: url('/glaze-gallery/svg/dropdown.svg');
+	background-position: calc(100% - 0.6rem) 50%;
+	background-repeat: no-repeat;
+	background-size: 1.25rem;
+	border: none;
+	border-radius: 0.75rem;
+	font-family: inherit;
+	font-size: 1.3rem;
+}
+
+select:focus {
+	outline: none;
+}
+
+main {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	margin-left: 1rem;
+	margin-right: 1rem;
+}
+
+.tile-container {
+	margin: 0.5rem;
+	perspective: 100rem;
+	font-size: 0;
+}
+
+.flipper.flip {
+	transform: rotateY(180deg);
+}
+
+.flipper {
+	position: relative;
+	width: 100%;
+	height: 100%;
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	transition-timing-function: ease-in-out;
+}
+
+.front, .back {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	border-radius: 1rem;
+	overflow: hidden;
+}
+
+.front {
+	position: relative;
+	transform: rotateY(0deg);
+}
+
+.back {
+	position: absolute;
+	top: 0;
+	left: 0;
+	transform: rotateY(180deg);
+}
+
+.arrow {
+	position: absolute;
+	width: 20%;
+	height: calc((20% - (0.2 * 2.53rem)) / 0.75);
+	right: 0;
+	cursor: pointer;
+	z-index: 1;
+}
+
+.arrow img {
+	position: absolute;
+	width: 50%;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+.back .arrow {
+    transform: scaleX(-1)
+}
+
+.tile-container .image {
+	position: relative;
+}
+
+.tile-container img.tile {
+	width: 100%;
+}
+
+.icons {
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	text-align: left;
+}
+
+.icons img {
+	width: 13%;
+	margin-left: 3%;
+	margin-bottom: 2.5%;
+}
+
+.info {
+	padding: 0.3rem 0;
+	background-color: #eee;
+	font-size: 1.1rem;
+	line-height: 130%;
+}
+
+.info p {
+	margin-top: 0.25rem;
+	margin-bottom: 0.25rem;
+}
+
+@media screen and (min-width: 54em) {
+	.filter {
+		display: inline-flex;
+	}
+
+	h3#slash {
+		display: inline-block;
+	}
+}

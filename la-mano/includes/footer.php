@@ -1,0 +1,1 @@
+<footer>&copy; <?php echo '2018'.(date('Y') > 2018 ? '–'.date('Y') : ''); ?> La Mano Pottery</footer>

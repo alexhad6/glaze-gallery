@@ -1,0 +1,53 @@
+#password {
+	display: flex;
+	align-items: stretch;
+	justify-content: center;
+	height: 2.3rem;
+}
+
+label {
+	align-self: center;
+	font-size: 1.5rem;
+}
+
+input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	background-color: #eee;
+	border: none;
+	border-radius: 0.75rem;
+	font-family: inherit;
+	font-size: 1.5rem;
+}
+
+input[type='submit'] {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	margin-top: 1.25rem;
+}
+
+
+input[type='password'] {
+	width: 10rem;
+	padding-left: 0.55rem;
+	margin-left: 0.25rem;
+	margin-right: 0.5rem;
+	letter-spacing: 0.05rem;
+}
+
+input:focus {
+	outline: none;
+	background-color: #ddd;
+}
+
+input:active {
+	background-color: #ddd;
+	color: black;
+}
+
+form p {
+	color: red;
+	margin-top: 0.25rem;
+}

@@ -1,0 +1,23 @@
+Options -MultiViews
+
+ErrorDocument 404 /glaze-gallery/404.php
+ErrorDocument 403 /glaze-gallery/403.php
+
+RewriteEngine On
+
+RewriteCond %{HTTPS} off
+RewriteRule . https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteCond %{HTTP_HOST} !^www\. [NC]
+RewriteRule . https://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+RewriteRule ^$ gallery.php [L]
+
+RewriteRule ^login$ login.php [L]
+
+RewriteCond %{DOCUMENT_ROOT}/glaze-gallery/img/low-res/$0-front.jpg -f
+RewriteRule ^.*$ tile.php [L]
+
+RewriteCond %{HTTP_REFERER} !^https://www.lamanopottery.com/glaze-gallery/
+RewriteCond %{REQUEST_FILENAME} !(gallery|tile|login|403|404)\.php$
+RewriteRule . - [F,L]
