@@ -1,6 +1,7 @@
-la-mano/favicon/
-la-mano/img/
-la-mano/svg/
-mud-matters/favicon/
-mud-matters/img/
-mud-matters/svg/
+# la-mano/favicon/
+# la-mano/img/
+# la-mano/svg/
+# mud-matters/favicon/
+# mud-matters/img/
+# mud-matters/svg/
+.DS_Store
