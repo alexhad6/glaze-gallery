@@ -7,6 +7,7 @@
 		'grape' => 'Grape',
 		'greensholtis' => 'Green Sholtis',
 		'harvestmoon' => 'Harvest Moon',
+		'noir' => 'Noir',
 		'nutmeg' => 'Nutmeg',
 		'randysred' => 'Randy&rsquo;s Red',
 		'randyswhite' => 'Randy&rsquo;s White',
