@@ -101,7 +101,7 @@ const tiles = new Map();
 				first: first,
 				second: second,
 				front: base + '-front.jpg', back: base + '-back.jpg',
-				notfoodsafe: notfoodsafe.includes(glaze),
+				notfoodsafe: notfoodsafe.includes(glaze) || (first == 'noir' || second == 'noir'),
 				runny: runny.includes(glaze),
 				caution: caution.includes(glaze)
 				//note: notes.has(glaze) ? notes.get(glaze) : ''
