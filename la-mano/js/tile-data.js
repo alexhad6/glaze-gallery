@@ -101,8 +101,8 @@ const tiles = new Map();
 				first: first,
 				second: second,
 				front: base + '-front.jpg', back: base + '-back.jpg',
-				notfoodsafe: notfoodsafe.includes(glaze) || (first == 'noir' || second == 'noir'),
-				runny: runny.includes(glaze),
+				notfoodsafe: notfoodsafe.includes(glaze),
+				runny: runny.includes(glaze) || (first == 'noir' || second == 'noir'),
 				caution: caution.includes(glaze)
 				//note: notes.has(glaze) ? notes.get(glaze) : ''
 			});
