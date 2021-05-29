@@ -72,19 +72,25 @@ $(() => {
 
 	$('<div class="dips"></div>').append('<p><span>1st dip (under):</span> <span>' + firstName + '</span></p>', '<p><span>2nd dip (over):</span> <span>' + secondName + '</span></p>').appendTo($info);
 
-	if (notfoodsafe || runny || caution) {
+	if (notfoodsafe || runny || caution || doublerunny || note) {
 		$warnings = $('<div class="warnings"></div>').appendTo($info);
 
 		if (notfoodsafe) {
 			$warnings.append('<p><img src="svg/not-food-safe.svg"> Not food safe</p>');
 		}
 
-		if (runny) {
+		if (doublerunny) {
+			$warnings.append('<p><img src="svg/runny.svg"> <img src="svg/runny.svg"> Very runny</p>');
+		} else if (runny) {
 			$warnings.append('<p><img src="svg/runny.svg"> Runny</p>');
 		}
 
 		if (caution) {
 			$warnings.append('<p><img src="svg/caution.svg"> May blister, jump, or crawl</p>');
+		}
+
+		if (note) {
+			$warnings.append(`<p>${note}</p>`);
 		}
 	}
 

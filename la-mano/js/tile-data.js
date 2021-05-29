@@ -13,7 +13,7 @@ const glazes = new Map([
 	['seaworld', 'Sea World'],
 	['spearmint', 'Spearmint'],
 	['suede', 'Suede'],
-	['turquoise', 'Turquoise']
+	['turquoise', 'Turquoise'],
 ]);
 
 const tiles = new Map();
@@ -22,7 +22,7 @@ const tiles = new Map();
 		'behrensclearchoy',
 		'choycharcoal',
 		'randyswhitechoy',
-		'turquoisechoy'
+		'turquoisechoy',
 	];
 
 	const runny = [
@@ -65,7 +65,7 @@ const tiles = new Map();
 		'spearmintrandyswhite',
 		'spearmintseaworld',
 		'spearmintturquoise',
-		'turquoiseharvestmoon'
+		'turquoiseharvestmoon',
 	];
 
 	const caution = [
@@ -85,13 +85,16 @@ const tiles = new Map();
 		'turquoisenutmeg',
 		'turquoiserandyswhite',
 		'turquoisespearmint',
-		'turquoiseturquoise'
+		'turquoiseturquoise',
 	];
 
-	// const notes = new Map([
-	// 	['behrensclearbehrensclear', 'This is an example note.'],
-	// 	['behrensclearbluespruce', 'Here\'s another example.']
-	// ]);
+	const doubleRunny = [
+		'noirharvestmoon',
+	];
+
+	const notes = new Map([
+		['noirharvestmoon', 'Only use inside pots.'],
+	]);
 
 	for (const first of glazes.keys()) {
 		for (const second of glazes.keys()) {
@@ -103,8 +106,9 @@ const tiles = new Map();
 				front: base + '-front.jpg', back: base + '-back.jpg',
 				notfoodsafe: notfoodsafe.includes(glaze),
 				runny: runny.includes(glaze) || (first == 'noir' || second == 'noir'),
-				caution: caution.includes(glaze)
-				//note: notes.has(glaze) ? notes.get(glaze) : ''
+				doubleRunny: doubleRunny.includes(glaze),
+				caution: caution.includes(glaze),
+				note: notes.has(glaze) ? notes.get(glaze) : ''
 			});
 		}
 	}

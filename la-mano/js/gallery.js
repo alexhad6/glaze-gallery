@@ -13,14 +13,17 @@ $(() => {
 
 		const $arrow = $('<div class="arrow" title="See other side"><img src="svg/flip.svg"></div>');
 
-		if (notfoodsafe || runny || caution) {
+		if (notfoodsafe || runny || caution || doublerunny) {
 			const $icons = $('<div class="icons"></div>').appendTo($image);
 
 			if (notfoodsafe) {
 				$icons.append('<img title="Not food safe" src="svg/not-food-safe.svg">');
 			}
 
-			if (runny) {
+			if (doublerunny) {
+				$icons.append('<img title="Runny" src="svg/runny.svg">');
+				$icons.append('<img title="Runny" src="svg/runny.svg">');
+			} else if (runny) {
 				$icons.append('<img title="Runny" src="svg/runny.svg">');
 			}
 
