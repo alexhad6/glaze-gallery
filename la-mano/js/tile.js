@@ -1,7 +1,7 @@
 $(() => {
 	const [first, second] = location.pathname.split('/').pop().split('-');
 	const firstName = glazes.get(first), secondName = glazes.get(second);
-	const {front, back, notfoodsafe, runny, caution} = tiles.get(first + second);
+	const {front, back, notfoodsafe, runny, doubleRunny, caution, note} = tiles.get(first + second);
 
 	const $tile = $('<div class="tile-container"></div');
 	const $front = $('<div class="front"></div>').appendTo($tile);
@@ -72,14 +72,14 @@ $(() => {
 
 	$('<div class="dips"></div>').append('<p><span>1st dip (under):</span> <span>' + firstName + '</span></p>', '<p><span>2nd dip (over):</span> <span>' + secondName + '</span></p>').appendTo($info);
 
-	if (notfoodsafe || runny || caution || doublerunny || note) {
+	if (notfoodsafe || runny || caution || doubleRunny || note) {
 		$warnings = $('<div class="warnings"></div>').appendTo($info);
 
 		if (notfoodsafe) {
 			$warnings.append('<p><img src="svg/not-food-safe.svg"> Not food safe</p>');
 		}
 
-		if (doublerunny) {
+		if (doubleRunny) {
 			$warnings.append('<p><img src="svg/runny.svg"> <img src="svg/runny.svg"> Very runny</p>');
 		} else if (runny) {
 			$warnings.append('<p><img src="svg/runny.svg"> Runny</p>');

@@ -1,7 +1,7 @@
 $(() => {
 	const gallery = new Map();
 	for (const [combo, tile] of tiles) {
-		const {first, second, front, back, notfoodsafe, runny, caution} = tile;
+		const {first, second, front, back, notfoodsafe, runny, doubleRunny, caution} = tile;
 
 		const $tile = $('<div class="tile-container"></div');
 		const $flipper = $('<div class="flipper"></div>').appendTo($tile);
@@ -13,14 +13,14 @@ $(() => {
 
 		const $arrow = $('<div class="arrow" title="See other side"><img src="svg/flip.svg"></div>');
 
-		if (notfoodsafe || runny || caution || doublerunny) {
+		if (notfoodsafe || runny || caution || doubleRunny) {
 			const $icons = $('<div class="icons"></div>').appendTo($image);
 
 			if (notfoodsafe) {
 				$icons.append('<img title="Not food safe" src="svg/not-food-safe.svg">');
 			}
 
-			if (doublerunny) {
+			if (doubleRunny) {
 				$icons.append('<img title="Runny" src="svg/runny.svg">');
 				$icons.append('<img title="Runny" src="svg/runny.svg">');
 			} else if (runny) {
