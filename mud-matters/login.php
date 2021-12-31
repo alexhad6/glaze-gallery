@@ -1,7 +1,7 @@
 <?php
 	session_start();
 
-	$hash = '$2y$10$o.PCOu72EgP6waycAquctetYzrBKOM59HyXFd88iVLzae0xOLVo5e';
+	$hash = '$2y$10$0t.ATDhLqSOXm3iLMzF4/uTr6.egLVcww0SV6lubRi34HOA0QK/na';
 	$return = (isset($_GET['return']) ? htmlspecialchars($_GET['return']) : '.');
 
 	if ($_SESSION['loggedin']) {
