@@ -69,6 +69,18 @@ const tiles = new Map();
 		'spearmintseaworld',
 		'spearmintturquoise',
 		'turquoiseharvestmoon',
+		'blueslaterandysred',
+		'spearmintblueslate',
+		'blueslatechoy',
+		'blueslatebluelapis',
+		'blueslategrape',
+		'grapeblueslate',
+		'blueslateseaworld',
+		'seaworldblueslate',
+		'blueslateturquoise',
+		'blueslategreensholtis',
+		'blueslatenoir',
+		'noirblueslate',
 	];
 
 	const caution = [
@@ -89,6 +101,8 @@ const tiles = new Map();
 		'turquoiserandyswhite',
 		'turquoisespearmint',
 		'turquoiseturquoise',
+		'suedeblueslate',
+		'blueslateclear',
 	];
 
 	const doubleRunny = [
