@@ -1,16 +1,16 @@
 $(() => {
 	const [first, second] = location.pathname.split('/').pop().split('-');
 	const firstName = glazes.get(first), secondName = glazes.get(second);
-	const {front, back, notfoodsafe, runny, caution} = tiles.get(first + second);
+	const {front, back, notfoodsafe, runny, doubleRunny, caution, note, frontOnly} = tiles.get(first + second);
 
 	const $tile = $('<div class="tile-container"></div');
 	const $front = $('<div class="front"></div>').appendTo($tile);
 	const $back = $('<div class="back"></div>').appendTo($tile);
 	
-	const $arrow = $('<div class="arrow" title="See other side"><img src="svg/flip.svg"></div>');
+	const $arrow = $(frontOnly ? '' :'<div class="arrow" title="See other side"><img src="svg/flip.svg"></div>');
 
 	$front.append($arrow.clone()).append('<img id="front-img" class="tile" src="img/high-res/' + front + '">');
-	$back.append($arrow.clone()).append('<img id="back-img" class="tile" src="img/high-res/' + back + '">');
+	if (!frontOnly) $back.append($arrow.clone()).append('<img id="back-img" class="tile" src="img/high-res/' + back + '">');
 
 	const $glass = $('<div class="magnifying-glass"></div>').hide();
 

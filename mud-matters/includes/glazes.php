@@ -1,6 +1,8 @@
 <?php
 	$glazes = array(
 		'behrensclear' => 'Behren&rsquo;s Clear',
+		'bluelapis' => 'Blue Lapis',
+		'blueslate' => 'Blue Slate',
 		'bluespruce' => 'Blue Spruce',
 		'charcoal' => 'Charcoal',
 		'choy' => 'Choy',
@@ -13,6 +15,7 @@
 		'nutmeg' => 'Nutmeg',
 		'randysred' => 'Randy&rsquo;s Red',
 		'randyswhite' => 'Randy&rsquo;s White',
+		'satinwhite' => 'Satin White',
 		// 'robertscobalt' => 'Robert&rsquo;s Cobalt',
 		'seaworld' => 'Sea World',
 		'spearmint' => 'Spearmint',

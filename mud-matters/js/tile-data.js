@@ -1,5 +1,7 @@
 const glazes = new Map([
 	['behrensclear', 'Behren&rsquo;s Clear'],
+	['bluelapis', 'Blue Lapis'],
+	['blueslate', 'Blue Slate'],
 	['bluespruce', 'Blue Spruce'],
 	['charcoal', 'Charcoal'],
 	['choy', 'Choy'],
@@ -13,6 +15,7 @@ const glazes = new Map([
 	['randysred', 'Randy&rsquo;s Red'],
 	['randyswhite', 'Randy&rsquo;s White'],
 	// ['robertscobalt', 'Robert&rsquo;s Cobalt'],
+	['satinwhite', 'Satin White'],
 	['seaworld', 'Sea World'],
 	['spearmint', 'Spearmint'],
 	['suede', 'Suede'],
@@ -146,6 +149,18 @@ const tiles = new Map();
 		'volcanicashsuede',
 		'volcanicashtrulywhite',
 		'volcanicashturquoise',
+		'blueslaterandysred',
+		'spearmintblueslate',
+		'blueslatechoy',
+		'blueslatebluelapis',
+		'blueslategrape',
+		'grapeblueslate',
+		'blueslateseaworld',
+		'seaworldblueslate',
+		'blueslateturquoise',
+		'blueslategreensholtis',
+		'blueslatenoir',
+		'noirblueslate',
 	];
 
 	const caution = [
@@ -210,12 +225,19 @@ const tiles = new Map();
 		'volcanicashchoy',
 		'volcanicashgrape',
 		'volcanicashtrulywhite',
+		'suedeblueslate',
+		'blueslateclear',
 	];
 
 	// const notes = new Map([
 	// 	['behrensclearbehrensclear', 'This is an example note.'],
 	// 	['behrensclearbluespruce', 'Here\'s another example.']
 	// ]);
+
+	const missingImage = [
+		'noirgrape',
+		'grapenoir',
+	];
 
 	for (const first of glazes.keys()) {
 		for (const second of glazes.keys()) {
@@ -224,11 +246,15 @@ const tiles = new Map();
 			tiles.set(glaze, {
 				first: first,
 				second: second,
-				front: base + '-front.jpg', back: base + '-back.jpg',
+				front: base + '-front.jpg',
+				back: base + '-back.jpg',
 				notfoodsafe: notfoodsafe.includes(glaze),
 				runny: runny.includes(glaze),
-				caution: caution.includes(glaze)
-				//note: notes.has(glaze) ? notes.get(glaze) : ''
+				caution: caution.includes(glaze),
+				//note: notes.has(glaze) ? notes.get(glaze) : '',
+				frontOnly: first === "blueslate" || second === "blueslate",
+				missingImage: missingImage.includes(glaze) ||
+					(first !== "blueslate" && second !== "blueslate" && (first === "bluelapis" || second === "bluelapis" || first === "satinwhite" || second === "satinwhite")),
 			});
 		}
 	}
