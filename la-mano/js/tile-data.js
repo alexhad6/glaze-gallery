@@ -1,5 +1,7 @@
 const glazes = new Map([
 	['behrensclear', 'Behren&rsquo;s Clear'],
+	['bluelapis', 'Blue Lapis'],
+	['blueslate', 'Blue Slate'],
 	['bluespruce', 'Blue Spruce'],
 	['charcoal', 'Charcoal'],
 	['choy', 'Choy'],
@@ -10,6 +12,7 @@ const glazes = new Map([
 	['nutmeg', 'Nutmeg'],
 	['randysred', 'Randy&rsquo;s Red'],
 	['randyswhite', 'Randy&rsquo;s White'],
+	['satinwhite', 'Satin White'],
 	['seaworld', 'Sea World'],
 	['spearmint', 'Spearmint'],
 	['suede', 'Suede'],
@@ -96,6 +99,12 @@ const tiles = new Map();
 		['noirharvestmoon', 'Only use inside pots.'],
 	]);
 
+	const missingImage = [
+		'noirgrape',
+		'grapenoir',
+	];
+
+
 	for (const first of glazes.keys()) {
 		for (const second of glazes.keys()) {
 			const base = first + '-' + second;
@@ -103,12 +112,16 @@ const tiles = new Map();
 			tiles.set(glaze, {
 				first: first,
 				second: second,
-				front: base + '-front.jpg', back: base + '-back.jpg',
+				front: base + '-front.jpg',
+				back: base + '-back.jpg',
 				notfoodsafe: notfoodsafe.includes(glaze),
 				runny: runny.includes(glaze) || (first == 'noir' || second == 'noir'),
 				doubleRunny: doubleRunny.includes(glaze),
 				caution: caution.includes(glaze),
-				note: notes.has(glaze) ? notes.get(glaze) : ''
+				note: notes.has(glaze) ? notes.get(glaze) : '',
+				frontOnly: first === "blueslate" || second === "blueslate",
+				missingImage: missingImage.includes(glaze) ||
+					(first !== "blueslate" && second !== "blueslate" && (first === "bluelapis" || second === "bluelapis" || first === "satinwhite" || second === "satinwhite"))
 			});
 		}
 	}

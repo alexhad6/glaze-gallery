@@ -1,7 +1,9 @@
 $(() => {
 	const gallery = new Map();
 	for (const [combo, tile] of tiles) {
-		const {first, second, front, back, notfoodsafe, runny, doubleRunny, caution} = tile;
+		const {first, second, front, back, notfoodsafe, runny, doubleRunny, caution, frontOnly, missingImage} = tile;
+
+		if (missingImage) continue;
 
 		const $tile = $('<div class="tile-container"></div');
 		const $flipper = $('<div class="flipper"></div>').appendTo($tile);
@@ -11,7 +13,7 @@ $(() => {
 		const $image = $('<a class="image" target="_blank" href="' + first + '-' + second + '"></a>');
 		const $info = $('<div class="info"><p>' + glazes.get(first) + ' \\ ' + glazes.get(second) + '</p></div>');
 
-		const $arrow = $('<div class="arrow" title="See other side"><img src="svg/flip.svg"></div>');
+		const $arrow = $(frontOnly ? '' : '<div class="arrow" title="See other side"><img src="svg/flip.svg"></div>');
 
 		if (notfoodsafe || runny || caution || doubleRunny) {
 			const $icons = $('<div class="icons"></div>').appendTo($image);
@@ -33,7 +35,7 @@ $(() => {
 		}
 
 		$front.append($arrow.clone()).append($image.clone().prepend('<img class="tile" src="img/low-res/' + front + '">')).append($info.clone());
-		$back.append($arrow.clone()).append($image.clone().prepend('<img class="tile" src="img/low-res/' + back + '">')).append($info.clone());
+		if (!frontOnly) $back.append($arrow.clone()).append($image.clone().prepend('<img class="tile" src="img/low-res/' + back + '">')).append($info.clone());
 
 		gallery.set(combo, $tile);
 	}
@@ -53,7 +55,7 @@ $(() => {
 				if ((firstVal == first || firstVal == 'anything') && (secondVal == second || secondVal == 'anything')) {
 					$('main').append(gallery.get(first + second));
 				}
-	 		}
+			}
 		}
 
 		$('.arrow').click(function() { $(this).parents('.flipper').toggleClass('flip'); });
