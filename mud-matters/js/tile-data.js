@@ -15,7 +15,7 @@ const glazes = new Map([
 	['randysred', 'Randy&rsquo;s Red'],
 	// ['randyswhite', 'Randy&rsquo;s White'],
 	// ['robertscobalt', 'Robert&rsquo;s Cobalt'],
-	['satinwhite', 'Satin White'],
+	// ['satinwhite', 'Satin White'],
 	['seaworld', 'Sea World'],
 	// ['spearmint', 'Spearmint'],
 	['suede', 'Suede'],
