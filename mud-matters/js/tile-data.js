@@ -10,8 +10,12 @@ const glazes = new Map([
 	// ['grey', 'Grey'],
 	['harvestmoon', 'Harvest Moon'],
 	// ['honeyamber', 'Honey Amber'],
+	['islandblue', 'Island Blue'],
 	// ['leather', 'Leather'],
+	['moonbeam', 'Moon Beam'],
 	// ['nutmeg', 'Nutmeg'],
+	['oribe', 'Oribe'],
+	['peacock', 'Peacock'],
 	['randysred', 'Randy&rsquo;s Red'],
 	// ['randyswhite', 'Randy&rsquo;s White'],
 	// ['robertscobalt', 'Robert&rsquo;s Cobalt'],
@@ -161,6 +165,50 @@ const tiles = new Map();
 		'blueslategreensholtis',
 		'blueslatenoir',
 		'noirblueslate',
+		'seaworldmoonbeam',
+		'moonbeambluespruce',
+		'moonbeamblueslate',
+		'noirmoonbeam',
+		'moonbeamnoir',
+		'choymoonbeam',
+		'moonbeamchoy',
+		'suedemoonbeam',
+		'harvestmoonmoonbeam',
+		'moonbeamharvestmoon',
+		'charcoalmoonbeam',
+		'moonbeamrandysred',
+		'randysredmoonbeam',
+		'islandbluecharcoal',
+		'peacockislandblue',
+		'suedeislandblue',
+		'islandbluesatinwhite',
+		'blueslateislandblue',
+		'islandblueharvestmoon',
+		'harvestmoonislandblue',
+		'moonbeamislandblue',
+		'oribecharcoal',
+		'oribesuede',
+		'suedeoribe',
+		'randysredoribe',
+		'oriberandysred',
+		'oribeseaworld',
+		'seaworldoribe',
+		'oribeharvestmoon',
+		'harvestmoonoribe',
+		'oribebluespruce',
+		'oribenoir',
+		'noiroribe',
+		'peacockseaworld',
+		'seaworldpeacock',
+		'randysredpeacock',
+		'peacockrandysred',
+		'suedepeacock',
+		'peacockchoy',
+		'moonbeampeacock',
+		'noirpeacock',
+		'peacocknoir',
+		'peacocksuede',
+		'harvestmoonpeacock',
 	];
 
 	const caution = [
@@ -239,6 +287,25 @@ const tiles = new Map();
 		'grapenoir',
 	];
 
+	const hasBluelapis = [
+		"blueslate",
+	];
+
+	const hasSatinwhite = [
+		"blueslate",
+		"moonbeam",
+		"peacock",
+		"oribe",
+		"islandblue",
+	];
+
+	const missingBehrensclear = [
+		"moonbeam",
+		"peacock",
+		"oribe",
+		"islandblue",
+	];
+
 	for (const first of glazes.keys()) {
 		for (const second of glazes.keys()) {
 			const base = first + '-' + second;
@@ -254,7 +321,12 @@ const tiles = new Map();
 				//note: notes.has(glaze) ? notes.get(glaze) : '',
 				frontOnly: first === "blueslate" || second === "blueslate",
 				missingImage: missingImage.includes(glaze) ||
-					(first !== "blueslate" && second !== "blueslate" && (first === "bluelapis" || second === "bluelapis" || first === "satinwhite" || second === "satinwhite")),
+					(!hasBluelapis.includes(first) && second === "bluelapis") ||
+					(first === "bluelapis" && !hasBluelapis.includes(second)) ||
+					(!hasSatinwhite.includes(first) && second === "satinwhite") ||
+					(first === "satinwhite" && !hasSatinwhite.includes(second)) ||
+					(missingBehrensclear.includes(first) && second === "behrensclear") ||
+					(first === "behrensclear" && missingBehrensclear.includes(second))
 			});
 		}
 	}
