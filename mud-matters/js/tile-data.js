@@ -1,6 +1,6 @@
 const glazes = new Map([
 	['behrensclear', 'Behren&rsquo;s Clear'],
-	['bluelapis', 'Blue Lapis'],
+	// ['bluelapis', 'Blue Lapis'],
 	['blueslate', 'Blue Slate'],
 	['bluespruce', 'Blue Spruce'],
 	['charcoal', 'Charcoal'],
@@ -287,10 +287,6 @@ const tiles = new Map();
 		'grapenoir',
 	];
 
-	const hasBluelapis = [
-		"blueslate",
-	];
-
 	const hasSatinwhite = [
 		"blueslate",
 		"moonbeam",
@@ -321,8 +317,6 @@ const tiles = new Map();
 				//note: notes.has(glaze) ? notes.get(glaze) : '',
 				frontOnly: first === "blueslate" || second === "blueslate",
 				missingImage: missingImage.includes(glaze) ||
-					(!hasBluelapis.includes(first) && second === "bluelapis") ||
-					(first === "bluelapis" && !hasBluelapis.includes(second)) ||
 					(!hasSatinwhite.includes(first) && second === "satinwhite") ||
 					(first === "satinwhite" && !hasSatinwhite.includes(second)) ||
 					(missingBehrensclear.includes(first) && second === "behrensclear") ||

@@ -1,7 +1,7 @@
 <?php
 	$glazes = array(
 		'behrensclear' => 'Behren&rsquo;s Clear',
-		'bluelapis' => 'Blue Lapis',
+		// 'bluelapis' => 'Blue Lapis',
 		'blueslate' => 'Blue Slate',
 		'bluespruce' => 'Blue Spruce',
 		'charcoal' => 'Charcoal',
